@@ -6,9 +6,9 @@ fn basic_world() {
     assert_eq!(1, w.things().len());
     let nxt : Option<&Box<dyn Thing>> = w.things().next();
     if let Some(t) = nxt {
-        assert_eq!(10.0, t.energy());
-        assert_eq!(10.0, t.min_ene_son());
-        assert_eq!(0.5, t.ene_son());        
+        assert_eq!(DEFAULT_THING_ENERGY, t.energy());
+        assert_eq!(DEFAULT_THING_MIN_ENERGY_SON, t.min_energy_son());
+        assert_eq!(DEFAULT_THING_ENERGY_SON, t.energy_son());        
     }
     else {
                 panic!("No Things found!");
